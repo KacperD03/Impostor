@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impostor Mini-Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <section id="menu-screen" class="screen active">
+            <h1 class="glitch" data-text="IMPOSTOR">IMPOSTOR</h1>
+            
+            <div class="settings-panel">
+                <div class="setting-group">
+                    <label for="playersCount">Liczba graczy: <span id="playersVal">4</span></label>
+                    <input type="range" id="playersCount" min="3" max="15" value="4">
+                </div>
+
+                <div class="setting-group">
+                    <label for="impostorsCount">Liczba impostorów: <span id="impostorsVal">1</span></label>
+                    <input type="range" id="impostorsCount" min="1" max="5" value="1">
+                </div>
+
+                <div class="setting-group toggle-group">
+                    <label for="hintsToggle">Podpowiedzi dla Impostora (Hints)</label>
+                    <label class="switch">
+                        <input type="checkbox" id="hintsToggle" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <button id="startBtn" class="neon-btn">START GAME</button>
+            </div>
+            <div id="menu-error" class="error-msg"></div>
+        </section>
+
+        <section id="game-screen" class="screen">
+            <h2 id="player-turn-text">Gracz 1</h2>
+            
+            <div class="card-container">
+                <div class="card" id="playerCard">
+                    <div class="card-face card-front">
+                        <div class="card-pattern"></div>
+                        <button id="revealBtn" class="neon-btn glow-blue">SHOW</button>
+                    </div>
+                    
+                    <div class="card-face card-back" id="cardBackInfo">
+                        </div>
+                </div>
+            </div>
+
+            <button id="nextBtn" class="neon-btn hidden">NEXT PLAYER</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
